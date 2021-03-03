@@ -259,7 +259,7 @@ def timestamp(value):
         ts = value[0]
         if int(math.log10(ts)) + 1 > 13:
             ts = int(ts / 1000)
-        return 8, time.gmtime(value[0])
+        return 8, time.gmtime(ts)
     except TypeError:
         raise ValueError('Could not unpack data')
 
