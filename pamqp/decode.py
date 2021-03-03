@@ -257,7 +257,7 @@ def timestamp(value):
     try:
         value = Struct.timestamp.unpack(value[0:8])
         ts = value[0]
-        if int(math.log10(ts)) > 13:
+        if int(math.log10(ts)) + 1 > 13:
             ts = int(ts / 1000)
         return 8, time.gmtime(value[0])
     except TypeError:
